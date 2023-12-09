@@ -1,0 +1,33 @@
+.container {
+  border-radius: 20px;
+  overflow: hidden;
+
+  position: relative;
+  box-shadow: 0px 2px 4px 0px rgba(157, 153, 153, 0.25),
+    0px -4px 15px 0px rgba(187, 155, 255, 0.15);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.text {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+
+  color: var(--primary-3);
+  font-size: 24px;
+  z-index: 2;
+}
+
+.overlay {
+  width: 308px;
+  height: 400px;
+  background: linear-gradient(#ffffff00, #0b012185, #0b0121);
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}

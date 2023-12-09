@@ -1,3 +1,57 @@
 .main {
-  
+  min-height: 200vh;
+  background: linear-gradient(#673EFF 0px, #0D0325 125vh);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 130px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.heroText > h1 {
+  margin-bottom: 65px;
+}
+
+.jumbotronContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 130px;
+}
+
+.jumbotronContainer > p {
+  margin-top: 52px;
+  color: var(--primary-2);
+}
+
+.stepsContainer {
+  padding: 130px;
+}
+
+.imageCardsContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 130px;
+}
+
+.questionContainer {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--primary-3);
+}
+
+.questionContainer > h2 {
+  margin-top: 62px;
+  font-size: 36px;
 }
