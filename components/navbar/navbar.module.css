@@ -8,10 +8,13 @@
   align-items: center;
 
   background-color: var(--primary-1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .menuButton {
-  display: none;
+  visibility: collapse;
 }
 
 .buttonsContainer {
@@ -45,6 +48,6 @@
   }
 
   .menuButton {
-    display: block;
+    visibility: visible;
   }
 }
