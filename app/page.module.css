@@ -39,8 +39,9 @@
 
 .imageCardsContainer {
   display: flex;
-  justify-content: space-between;
-  padding: 0px 130px;
+  justify-content: center;
+  gap: 80px;
+  width: 100vw;
 }
 
 .questionContainer {
