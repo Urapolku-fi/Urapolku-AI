@@ -1,6 +1,6 @@
 .main {
   min-height: 200vh;
-  background: linear-gradient(#673EFF 0px, #0D0325 125vh);
+  background: linear-gradient(#673eff 0px, var(--primary-1) 125vh);
 }
 
 .hero {
@@ -45,6 +45,7 @@
 
 .questionContainer {
   margin-top: 100px;
+  padding-bottom: 80px;
   display: flex;
   align-items: center;
   flex-direction: column;
