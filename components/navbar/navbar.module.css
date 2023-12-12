@@ -15,6 +15,7 @@
 
 .menuButton {
   visibility: collapse;
+  position: absolute;
 }
 
 .buttonsContainer {
@@ -38,7 +39,7 @@
   }
 }
 
-@media only screen and (max-width: 648px) {
+@media only screen and (max-width: 650) {
   .container {
     padding: 0px 60px;
   }
@@ -49,5 +50,6 @@
 
   .menuButton {
     visibility: visible;
+    position: unset;
   }
 }
