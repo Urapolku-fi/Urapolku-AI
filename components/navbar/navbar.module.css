@@ -39,7 +39,7 @@
   }
 }
 
-@media only screen and (max-width: 650) {
+@media only screen and (max-width: 650px) {
   .container {
     padding: 0px 60px;
   }
