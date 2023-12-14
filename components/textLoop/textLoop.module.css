@@ -1,0 +1,6 @@
+.button {
+  opacity: 0;
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+  margin-top: 85px;
+}

@@ -8,9 +8,15 @@
   box-sizing: border-box;
 }
 
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   font-family: "Montserrat", sans-serif;
   background-color: var(--primary-1);
+  overflow-x: hidden;
 }

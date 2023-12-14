@@ -15,8 +15,7 @@
 .heroText {
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  text-align: center;
+  width: 500px;
 }
 
 .heroText > h1 {
@@ -32,7 +31,6 @@
   height: 100vh;
   width: 100%;
 }
-
 
 .heroImageSmall {
   display: none;
@@ -89,6 +87,7 @@
     flex-direction: column;
     align-items: center;
     gap: 39px;
+    text-align: center;
   }
 
   .heroText > h1 {
@@ -97,10 +96,6 @@
 
   .heroText br {
     display: none;
-  }
-
-  .heroText > button {
-    width: fit-content;
   }
 
   .heroDescription {
@@ -113,7 +108,7 @@
   .heroImageLarge {
     display: none;
   }
-  
+
   .heroImageSmall {
     display: block;
     width: 100%;
