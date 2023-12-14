@@ -37,7 +37,7 @@ function TextLoop({ texts }: TextLoopProps) {
       animate(
         "h1",
         { transform: "translateY(0)", opacity: 1 },
-        { duration: 0 }
+        { duration: 0, delay: 0.5 }
       );
 
       await animate(
