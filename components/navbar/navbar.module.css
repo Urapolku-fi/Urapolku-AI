@@ -24,6 +24,10 @@
   gap: 32px;
 }
 
+.buttonsContainer > button {
+  padding: 0px;
+}
+
 .skeletonButton {
   padding: 0px;
 }
@@ -36,6 +40,12 @@
 @media only screen and (max-width: 1200px) {
   .container {
     padding: 0px 80 px;
+  }
+
+  .longButton {
+    font-size: 14px;
+    padding: 0px 15px !important;
+    white-space: nowrap;
   }
 }
 

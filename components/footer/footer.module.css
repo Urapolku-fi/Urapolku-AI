@@ -27,18 +27,12 @@
   margin-top: 6px;
 }
 
-.contact {
-  grid-column: 1;
-}
-
-.address {
-  grid-column: 2;
-}
-
+.contact,
 .careers {
   grid-column: 1;
 }
 
+.address,
 .social {
   grid-column: 2;
 }
@@ -47,4 +41,22 @@
   grid-column: 1 / 4;
   display: flex;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 650px) {
+  .footer {
+    grid-template-columns: 2fr 1fr;
+    padding: 64px 60px 32px 60px;
+    gap: 24px;
+  }
+
+  .address,
+  .social {
+    grid-column: 1;
+  }
+
+  .copyright {
+    margin-top: 33px;
+    grid-column: 1 / 3;
+  }
 }

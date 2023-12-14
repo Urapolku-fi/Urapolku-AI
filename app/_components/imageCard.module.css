@@ -1,4 +1,7 @@
 .container {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 10/16;
   border-radius: 20px;
   overflow: hidden;
 
@@ -8,6 +11,8 @@
 }
 
 .image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -20,14 +25,25 @@
 
   color: var(--primary-3);
   font-size: 24px;
+  font-weight: 600px;
   z-index: 2;
 }
 
 .overlay {
-  width: 308px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(#ffffff00, #0b012185, #0b0121);
   position: absolute;
   top: 0;
   z-index: 1;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    aspect-ratio: 16/10;
+  }
+
+  .text {
+    bottom: 15px;
+  }
 }

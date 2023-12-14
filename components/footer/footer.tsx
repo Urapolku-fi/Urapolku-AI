@@ -20,8 +20,8 @@ function Footer() {
         <p>398 11th Street, Floor 2</p>
         <p>San Francisco, CA 94103</p>
       </section>
-      <section>
-        <h2 className={styles.social}>Social</h2>
+      <section className={styles.social}>
+        <h2>Social</h2>
         <p>398 11th Street, Floor 2</p>
         <p>San Francisco, CA 94103</p>
       </section>

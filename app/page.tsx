@@ -13,14 +13,38 @@ export default function Home() {
           <Heading>
             Say hello to <br /> Urapolku AI!
           </Heading>
+          <p className={styles.heroDescription}>
+            Only 10 min away from finding the career which suits your
+            personality and interests.
+          </p>
           <Button variant="rounded">Find your career path &rarr;</Button>
         </div>
-        <div></div>
+        <div className={styles.imageContainer}>
+          <Image
+            className={styles.heroImageLarge}
+            src="/network-lg.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+          <Image
+            className={styles.heroImageSmall}
+            src="/network-sm.png"
+            alt=""
+            width={600}
+            height={600}
+          />
+        </div>
       </section>
       <section className={styles.jumbotronContainer}>
         <Heading>Urapolku AI</Heading>
-        <p>Only 10 min away from finding the career which suits your personality and interests.</p>
-        <Button variant="rounded" outline>Find your Career Path in three simple steps &rarr;</Button>
+        <p>
+          Only 10 min away from finding the career which suits your personality
+          and interests.
+        </p>
+        <Button variant="rounded" outline>
+          Find your Career Path in three simple steps &rarr;
+        </Button>
       </section>
       <section className={styles.stepsContainer}>
         <Steps />
