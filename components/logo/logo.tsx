@@ -5,6 +5,7 @@ function Logo() {
   return (
     <div className={styles.container}>
       <Image
+        priority
         className={styles.image}
         src="/logo.png"
         alt="Ai"

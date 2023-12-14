@@ -17,7 +17,7 @@ function Navbar() {
         </Button>
 
         <div>
-          <Button variant="rounded">Find your Career Path!</Button>
+          <Button variant="rounded" className={styles.longButton}>Find your Career Path!</Button>
           <Button outline variant="rounded">
             Login
           </Button>
