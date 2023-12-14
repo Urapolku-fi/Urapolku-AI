@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
 body {
   margin: 0px;
   padding: 0px;

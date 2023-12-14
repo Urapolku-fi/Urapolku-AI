@@ -4,20 +4,27 @@ import Button from "@/components/button/button";
 import Heading from "@/components/heading/heading";
 import Steps from "./_components/steps";
 import ImageCard from "./_components/imageCard";
+import TextLoop from "@/components/textLoop/textLoop";
 
 export default function Home() {
+  const texts = [
+    "Can't decide what's the best fit for YOU?",
+    "What university can lead to your dream job?",
+    "Looking for a career change?",
+    "Say hello to Urapolku AI!"
+  ];
+
+
+
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
         <div className={styles.heroText}>
-          <Heading>
-            Say hello to <br /> Urapolku AI!
-          </Heading>
+          <TextLoop texts={texts} />
           <p className={styles.heroDescription}>
             Only 10 min away from finding the career which suits your
             personality and interests.
           </p>
-          <Button variant="rounded">Find your career path &rarr;</Button>
         </div>
         <div className={styles.imageContainer}>
           <Image
