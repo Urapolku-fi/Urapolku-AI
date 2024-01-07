@@ -1,6 +1,7 @@
 import { IQuestion, QuestionType } from "../questions";
 import AgreeDisagree from "./answerFields/AgreeDisagree";
 import MultipleChoice from "./answerFields/MultipleChoice";
+import YesNo from "./answerFields/YesNo";
 
 import styles from "./Question.module.css";
 
@@ -27,14 +28,18 @@ function getAnswerField(
       return <AgreeDisagree onSelect={onSelect} />;
     case QuestionType.MultipleChoice:
       return (
-        <MultipleChoice onSelect={onSelect} options={question.answers ?? []} />
+        <MultipleChoice
+          onSelect={onSelect}
+          questionTitle={question.title}
+          options={question.answers ?? []}
+        />
       );
+    case QuestionType.YesNo:
+      return <YesNo />;
     case QuestionType.Dropdown:
       return <div>Dropdown</div>;
     case QuestionType.Number:
       return <div>Number</div>;
-    case QuestionType.YesNo:
-      return <div>YesNo</div>;
     default:
       return <div>Unknown</div>;
   }
