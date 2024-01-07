@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.agree {
+  color: var(--primary-4);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.disagree {
+  color: var(--neutral-12);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.button {
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* First 3  */
+.button:nth-child(-n + 3) {
+  border: 2px solid var(--primary-4);
+}
+
+.button:nth-child(-n + 3).selected {
+  background-color: var(--primary-4);
+}
+
+/* Middle */
+.button:nth-child(4) {
+  border: 2px solid var(--primary-2);
+  height: 24px;
+  width: 24px;
+}
+
+.button:nth-child(4).selected {
+  background-color: var(--primary-2);
+}
+
+/* Last 2 */
+.button:nth-child(n + 5) {
+  border: 2px solid var(--neutral-12);
+}
+
+.button:nth-child(n + 5).selected {
+  background-color: var(--neutral-12);
+}
+
+/* First and last */
+.button:nth-child(1),
+.button:nth-child(7) {
+  width: 42px;
+  height: 42px;
+}
+
+/* Second and second last */
+.button:nth-child(2),
+.button:nth-child(6) {
+  width: 34px;
+  height: 34px;
+}
+
+/* Third and third last */
+.button:nth-child(3),
+.button:nth-child(5) {
+  width: 26px;
+  height: 26px;
+}
+
+/* Middle applied above */
