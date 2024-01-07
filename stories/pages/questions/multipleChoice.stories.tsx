@@ -9,15 +9,19 @@ export default {
         type: "text",
       },
     },
+    options: {
+      control: {
+        type: "array",
+      },
+    },
   },
 };
 
 export const Default = (args: any) => {
   const question: IQuestion = {
-    title:
-      args.title ??
-      "You prefer to completely finish one project before starting another.",
-    kind: QuestionType.AgreeDisagree,
+    title: args.title ?? "What is your preferred work setting?",
+    kind: QuestionType.MultipleChoice,
+    answers: args.options ?? ["Remote", "Office", "Hybrid"],
   };
 
   return <Question question={question} />;

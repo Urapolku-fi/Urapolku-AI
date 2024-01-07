@@ -4,11 +4,12 @@
   --primary-1: #0b0121;
   --primary-2: #a39bb4;
   --primary-3: #ececec;
-  --primary-4: #BB9BFF;
+  --primary-4: #bb9bff;
 
   --neutral-12: #5c5c5c;
 
   box-sizing: border-box;
+  font-feature-settings: "liga" off;
 }
 
 img {

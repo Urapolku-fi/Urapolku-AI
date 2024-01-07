@@ -1,5 +1,6 @@
 import { IQuestion, QuestionType } from "../questions";
 import AgreeDisagree from "./answerFields/AgreeDisagree";
+import MultipleChoice from "./answerFields/MultipleChoice";
 
 import styles from "./Question.module.css";
 
@@ -25,7 +26,9 @@ function getAnswerField(
     case QuestionType.AgreeDisagree:
       return <AgreeDisagree onSelect={onSelect} />;
     case QuestionType.MultipleChoice:
-      return <div>MultipleChoice</div>;
+      return (
+        <MultipleChoice onSelect={onSelect} options={question.answers ?? []} />
+      );
     case QuestionType.Dropdown:
       return <div>Dropdown</div>;
     case QuestionType.Number:
