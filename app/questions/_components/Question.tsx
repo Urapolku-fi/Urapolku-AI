@@ -1,5 +1,6 @@
 import { IQuestion, QuestionType } from "../questions";
 import AgreeDisagree from "./answerFields/AgreeDisagree";
+import Dropdown from "./answerFields/Dropdown";
 import MultipleChoice from "./answerFields/MultipleChoice";
 import Number from "./answerFields/Number";
 import YesNo from "./answerFields/YesNo";
@@ -38,7 +39,12 @@ function getAnswerField(
     case QuestionType.YesNo:
       return <YesNo questionTitle={question.title} />;
     case QuestionType.Dropdown:
-      return <div>Dropdown</div>;
+      return (
+        <Dropdown
+          onSelect={onSelect}
+          options={question.answers ?? ["No options"]}
+        />
+      );
     case QuestionType.Number:
       return <Number onSelect={onSelect} />;
     default:
