@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+
+  border: 2px solid var(--primary-4);
+  background-color: transparent;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primary-1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.selected {
+  background-color: var(--primary-4);
+}
