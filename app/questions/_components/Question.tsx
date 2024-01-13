@@ -35,7 +35,7 @@ function getAnswerField(
         />
       );
     case QuestionType.YesNo:
-      return <YesNo />;
+      return <YesNo questionTitle={question.title} />;
     case QuestionType.Dropdown:
       return <div>Dropdown</div>;
     case QuestionType.Number:

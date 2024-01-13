@@ -14,7 +14,11 @@ function MultipleChoice({
   return (
     <div className={styles.container}>
       {options.map((option, index) => (
-        <span className={styles.option} key={index}>
+        <span
+          onClick={() => onSelect?.(index)}
+          className={styles.option}
+          key={index}
+        >
           <input id={questionTitle + option + index} type="checkbox" />
           <label
             htmlFor={questionTitle + option + index}
