@@ -1,3 +1,5 @@
+"use client";
+import { forwardRef } from "react";
 import { IQuestion, QuestionType } from "../questions";
 import AgreeDisagree from "./answerFields/AgreeDisagree";
 import Dropdown from "./answerFields/Dropdown";
@@ -12,14 +14,17 @@ interface QuestionProps {
   onSelect?: (index: number) => void;
 }
 
-function Question({ question, onSelect }: QuestionProps) {
+const Question = forwardRef(function Question({
+  question,
+  onSelect,
+}: QuestionProps) {
   return (
-    <section className="">
+    <section className={styles.container}>
       <p className={styles.heading}>{question.title}</p>
       {getAnswerField(question, onSelect ?? (() => {}))}
     </section>
   );
-}
+});
 
 function getAnswerField(
   question: IQuestion,
@@ -37,7 +42,7 @@ function getAnswerField(
         />
       );
     case QuestionType.YesNo:
-      return <YesNo questionTitle={question.title} />;
+      return <YesNo onSelect={onSelect} questionTitle={question.title} />;
     case QuestionType.Dropdown:
       return (
         <Dropdown

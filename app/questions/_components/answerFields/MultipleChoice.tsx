@@ -1,3 +1,4 @@
+"use client";
 import styles from "./MultipleChoice.module.css";
 
 interface MultipleChoiceProps {

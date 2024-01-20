@@ -1,3 +1,4 @@
+"use client";
 import { MouseEvent, useRef } from "react";
 import styles from "./YesNo.module.css";
 

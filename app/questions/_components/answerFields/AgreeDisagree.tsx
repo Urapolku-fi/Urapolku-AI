@@ -1,3 +1,4 @@
+"use client";
 import { classMerge as cm } from "@/lib/classMerge";
 import styles from "./AgreeDisagree.module.css";
 import { MouseEvent, useRef } from "react";

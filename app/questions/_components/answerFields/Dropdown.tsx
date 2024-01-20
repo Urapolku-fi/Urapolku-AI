@@ -1,3 +1,4 @@
+"use client";
 import Chevron from "@/icons/chevron";
 import styles from "./Dropdown.module.css";
 import { useRef } from "react";
@@ -12,8 +13,8 @@ function Dropdown({ onSelect, options }: DropdownProps) {
 
   return (
     <div className={styles.container}>
-      <select ref={selectRef} placeholder="Select one" name="name" id="id">
-        <option value="value" disabled selected hidden>
+      <select ref={selectRef} defaultValue="value" placeholder="Select one" name="name" id="id">
+        <option value="value" hidden>
           Select one
         </option>
         {options.map((option, index) => (
