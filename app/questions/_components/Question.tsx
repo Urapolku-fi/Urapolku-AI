@@ -14,17 +14,14 @@ interface QuestionProps {
   onSelect?: (index: number) => void;
 }
 
-const Question = forwardRef(function Question({
-  question,
-  onSelect,
-}: QuestionProps) {
+function Question({ question, onSelect }: QuestionProps) {
   return (
     <section className={styles.container}>
       <p className={styles.heading}>{question.title}</p>
       {getAnswerField(question, onSelect ?? (() => {}))}
     </section>
   );
-});
+}
 
 function getAnswerField(
   question: IQuestion,
