@@ -78,4 +78,38 @@
   height: 26px;
 }
 
-/* Middle applied above */
+@media screen and (max-width: 650px) {
+  .container {
+    gap: 16px;
+  }
+
+  .agree {
+    font-size: 16px;
+  }
+
+  .disagree {
+    font-size: 16px;
+  }
+
+  .buttonsContainer {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .button:nth-child(2),
+  .button:nth-child(6) {
+    width: 34px;
+    height: 34px;
+  }
+
+  .button:nth-child(3),
+  .button:nth-child(5) {
+    width: 26px;
+    height: 26px;
+  }
+}
