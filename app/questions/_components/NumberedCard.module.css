@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+
+  width: 255px;
+
+  border-radius: 20px;
+  padding: 16px 24px;
+
+  color: var(--primary-2);
+  background-color: var(--primary-1);
+  box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+}
+
+.number {
+  color: black;
+  background-color: var(--primary-3);
+  box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset;
+  filter: drop-shadow(0px -2px 40px rgba(187, 155, 255, 0.15))
+    drop-shadow(0px -2px 10px rgba(233, 223, 255, 0.3));
+
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .number {
+    height: 60px;
+    width: 60px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: row;
+    width: 100%;
+    padding: 16px 24px;
+  }
+
+  .number {
+    height: 60px;
+    width: 60px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+}

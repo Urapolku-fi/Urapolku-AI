@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--secondary-dividers-2);
+  border-radius: 8px;
+}
+
+.container select {
+  appearance: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: transparent;
+  color: var(--primary-1);
+  border: none;
+}
+
+.icon {
+  position: absolute;
+  right: 16px;
+  top: 10%;
+  stroke: var(--neutral-9);
+  pointer-events: none;
+}
