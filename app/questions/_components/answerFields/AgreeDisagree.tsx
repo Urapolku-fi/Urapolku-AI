@@ -13,6 +13,7 @@ function AgreeDisagree({ onSelect }: AgreeDisagreeProps) {
   const buttons = useRef<HTMLButtonElement[]>([]);
 
   const onClick = (e: MouseEvent<HTMLButtonElement>, index: number) => {
+    e.stopPropagation();
     buttons.current.forEach((button) =>
       button.classList.remove(styles.selected)
     );

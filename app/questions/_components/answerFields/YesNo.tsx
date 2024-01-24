@@ -9,6 +9,7 @@ interface YesNoProps {
 
 function YesNo({ onSelect, questionTitle }: YesNoProps) {
   const onClick = (e: MouseEvent<HTMLSpanElement>, index: number) => {
+    e.stopPropagation();
     onSelect?.(index);
   };
 
@@ -26,6 +27,7 @@ function YesNo({ onSelect, questionTitle }: YesNoProps) {
             name={questionTitle}
           />
           <label
+            onClick={(e) => e.stopPropagation()}
             htmlFor={questionTitle + option + index}
             className={styles.option}
           >

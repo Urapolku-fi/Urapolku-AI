@@ -1,7 +1,7 @@
 "use client";
 import Chevron from "@/icons/chevron";
 import styles from "./Dropdown.module.css";
-import { useRef } from "react";
+import { MouseEvent, useRef } from "react";
 
 interface DropdownProps {
   onSelect: (index: number) => void;
@@ -11,14 +11,25 @@ interface DropdownProps {
 function Dropdown({ onSelect, options }: DropdownProps) {
   const selectRef = useRef<HTMLSelectElement>(null);
 
+  const onClick = (e: MouseEvent<HTMLOptionElement>, index: number) => {
+    e.preventDefault();
+    onSelect(index);
+  };
+
   return (
     <div className={styles.container}>
-      <select ref={selectRef} defaultValue="value" placeholder="Select one" name="name" id="id">
+      <select
+        ref={selectRef}
+        defaultValue="value"
+        placeholder="Select one"
+        name="name"
+        id="id"
+      >
         <option value="value" hidden>
           Select one
         </option>
         {options.map((option, index) => (
-          <option onClick={() => onSelect(index)} key={index} value={option}>
+          <option onClick={(e) => onClick(e, index)} key={index} value={option}>
             {option}
           </option>
         ))}

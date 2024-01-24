@@ -29,6 +29,15 @@ export enum QuestionType {
   Dropdown = "Dropdown",
 }
 
+/**
+ * Checks if a question is a single answer question.
+ * @param question - The question to check.
+ * @returns True if the question is a single answer question, false otherwise.
+ */
+export function isSingleAnswerQuestion(question: IQuestion) {
+  return !(question.kind === QuestionType.MultipleChoice);
+}
+
 export const questions: IQuestion[] = [
   {
     title:

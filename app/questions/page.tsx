@@ -4,15 +4,45 @@ import NumberedCard from "./_components/NumberedCard";
 import Question from "./_components/Question";
 
 import styles from "./page.module.css";
-import { questions } from "./questions";
+import { isSingleAnswerQuestion, questions } from "./questions";
 import { useRef } from "react";
 
 function Questions() {
-  const questionRefs = useRef<(HTMLDivElement|null)[]>([]);
+  const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const answersObject = useRef<{ [key: number]: number | number[] }>({});
+
+  const onSubmit = async () => {
+    console.log(JSON.stringify(answersObject.current));
+    const result = await fetch("/api/generate-urapolku", {
+      method: "POST",
+      body: JSON.stringify(answersObject.current),
+    });
+    console.log(result.status);
+    const response = await result.json();
+    console.log(response);
+  };
 
   const onSelect = (questionId: number, answerId: number) => {
+    const question = questions[questionId];
+
+    if (isSingleAnswerQuestion(question)) {
+      answersObject.current[questionId] = answerId;
+    } else {
+      if (answersObject.current[questionId] === undefined) {
+        answersObject.current[questionId] = [];
+      }
+
+      let answers = answersObject.current[questionId] as number[];
+
+      if (answers.includes(answerId)) {
+        answers = answers.filter((answer) => answer !== answerId);
+      } else {
+        answers.push(answerId);
+      }
+    }
+
     questionRefs.current[questionId + 1]?.scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -55,7 +85,9 @@ function Questions() {
       <section className={styles.bottomPart}>
         <p>You are doing great!</p>
         <span className={styles.buttonContainer}>
-          <Button dark>Next</Button>
+          <Button dark onClick={onSubmit}>
+            Next
+          </Button>
         </span>
       </section>
     </main>

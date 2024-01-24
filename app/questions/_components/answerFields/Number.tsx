@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { MouseEvent, useRef } from "react";
 import styles from "./Number.module.css";
 
 interface AgreeDisagreeProps {
@@ -11,7 +11,8 @@ const BUTTON_COUNT = 10;
 function Number({ onSelect }: AgreeDisagreeProps) {
   const buttons = useRef<HTMLButtonElement[]>([]);
 
-  const onClick = (index: number) => {
+  const onClick = (e: MouseEvent<HTMLButtonElement>, index: number) => {
+    e.stopPropagation();
     buttons.current.forEach((button) =>
       button.classList.remove(styles.selected)
     );
@@ -24,7 +25,7 @@ function Number({ onSelect }: AgreeDisagreeProps) {
       {Array.from({ length: BUTTON_COUNT }, (_, i) => (
         <button
           className={styles.button}
-          onClick={() => onClick(i)}
+          onClick={(e) => onClick(e, i)}
           key={i}
           ref={(el) => (buttons.current[i] = el!)}
         >
