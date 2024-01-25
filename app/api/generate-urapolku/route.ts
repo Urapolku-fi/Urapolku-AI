@@ -9,7 +9,15 @@ import { xxHash32 } from "js-xxhash";
 import { db } from "../_lib/db";
 import { ai } from "../_lib/ai";
 
-export async function POST(request: Request) {
+interface GenerateUrapolkuResponse {
+  cached: boolean;
+  response: string;
+  responseUUID: string;
+}
+
+export async function POST(
+  request: Request
+): Promise<NextResponse<GenerateUrapolkuResponse | { message: string }>> {
   const { userId } = auth();
 
   if (!userId)
@@ -26,7 +34,7 @@ export async function POST(request: Request) {
 
   if (existing) {
     return NextResponse.json(
-      { answers, hash, cached: true, response: existing.results },
+      { cached: true, response: existing.results, responseUUID: existing.id },
       { status: 200 }
     );
   }
@@ -46,7 +54,7 @@ export async function POST(request: Request) {
     response_format: { type: "json_object" },
   });
 
-  await db.answers.create({
+  const created = await db.answers.create({
     data: {
       hash,
       promptVersion,
@@ -56,7 +64,7 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json(
-    { answers, hash, cached: false, response: response.choices[0].message },
+    { cached: false, response: created.results, responseUUID: created.id },
     { status: 200 }
   );
 }
