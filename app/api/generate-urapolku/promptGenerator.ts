@@ -1,6 +1,19 @@
 import { QuestionType, questions } from "@/app/questions/questions";
 
-const prompt = "";
+const prompt = `You are an advanced career finding AI. You have been tasked with finding a career for a human. You are given a set of questions and responses collected from the user. Your goal is to find a career that best fits the user's responses.
+Please give the response using the following json format without any extra characters or spaces. The response should be a stringified json object with the following format. Do not output anything else. Only give the json:
+###
+{
+  // 5 sets of percentages (0.00-1.00)
+  percentages: { name: string; score: number }[];
+  // 3 paths with a name and a score (0.00-1.00)
+  paths: { name: string; score: number }[];
+}
+###
+---
+`;
+
+export const promptVersion = 1;
 
 const agreeDisagreeScale = [
   "Neutral",
@@ -46,4 +59,23 @@ export function reconstructAnswers(answers: {
   }
 
   return constructedAnswers;
+}
+
+/**
+ * Constructs a prompt and answer string based on the provided answers.
+ * @param answers An array of answer objects.
+ * @returns A tuple containing the system message and the user message.
+ */
+export function constructPrompt(answers: Answers[]): [string, string] {
+  const answerStrings = answers.map((answer) => {
+    if (typeof answer.answer === "string") {
+      return `**${answer.question}**: ${answer.answer}`;
+    } else if (typeof answer.answer === "number") {
+      return `**${answer.question}**: ${answer.answer}`;
+    } else {
+      return `**${answer.question}**: ${answer.answer.join(", ")}`;
+    }
+  });
+
+  return [prompt, answerStrings.join("\n")];
 }

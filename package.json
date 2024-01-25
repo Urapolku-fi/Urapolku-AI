@@ -8,12 +8,18 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006 -s ../public",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prisma:generate": "dotenv -e .env.local -- prisma generate",
+    "prisma:push": "dotenv -e .env.local -- prisma db push"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.4",
+    "@prisma/client": "^5.8.1",
     "framer-motion": "^10.16.16",
+    "js-xxhash": "^3.0.1",
     "next": "14.0.3",
+    "openai": "^4.25.0",
+    "prisma": "^5.8.1",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -29,6 +35,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "eslint-plugin-storybook": "^0.6.15",
