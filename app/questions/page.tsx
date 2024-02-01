@@ -1,25 +1,24 @@
 "use client";
+import { useRouter } from "next/navigation";
 import Button from "@/components/button/button";
 import NumberedCard from "./_components/NumberedCard";
 import Question from "./_components/Question";
-
 import styles from "./page.module.css";
 import { isSingleAnswerQuestion, questions } from "./questions";
 import { useRef } from "react";
 
 function Questions() {
+  const router = useRouter();
   const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const answersObject = useRef<{ [key: number]: number | number[] }>({});
 
   const onSubmit = async () => {
-    console.log(JSON.stringify(answersObject.current));
-    const result = await fetch("/api/generate-urapolku", {
-      method: "POST",
-      body: JSON.stringify(answersObject.current),
-    });
-    console.log(result.status);
-    const response = await result.json();
-    console.log(response);
+    window.sessionStorage.setItem(
+      "answers",
+      JSON.stringify(answersObject.current)
+    );
+
+    router.push("/waiting");
   };
 
   const onSelect = (questionId: number, answerId: number) => {
