@@ -1,6 +1,15 @@
+.main{
+    background: linear-gradient(#673eff 0px, var(--primary-1) 50vh);
+    min-height: 100vh;
+}
+
 .test{
     min-height: auto;
     padding: 8px;
+}
+
+.text{
+    font-size: 20px;
 }
 
 .header{
@@ -9,10 +18,16 @@
 
 /* ----START ---- styling for progress bars */
 .elements{
+    margin-top: 40px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     width: 80%;
+}
+
+.elements p{
+    color: white;
+    font-size: 20px;
 }
 
 .center{
@@ -28,3 +43,71 @@
     height: 100px;
     width: 100px;
 }
+
+
+
+/* styling for "ThreeCarrerPath component" */
+
+.title{
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.threeEl{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 80%;
+}
+
+.parent{
+    height: 400px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.webDev{
+    font-size: 25px;
+    color: white
+}
+
+.image{
+    height: 200px;
+    width: 200px;
+}
+
+.smallText{
+    color: white;
+    font-size: 15px;
+    width: 60%;
+    text-align: center;
+    margin-bottom: -15px;
+}
+
+.percentage{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn{
+    padding: 15px 50px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.link{
+    padding-top: 30px;
+    font-size: 15px;
+    color: white;
+}
+
+
