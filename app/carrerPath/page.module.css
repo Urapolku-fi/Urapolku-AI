@@ -1,0 +1,30 @@
+.test{
+    min-height: auto;
+    padding: 8px;
+}
+
+.header{
+    padding: 80px 0 40px 0;
+}
+
+/* ----START ---- styling for progress bars */
+.elements{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 80%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circle{
+    border-radius: 100%;
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}
